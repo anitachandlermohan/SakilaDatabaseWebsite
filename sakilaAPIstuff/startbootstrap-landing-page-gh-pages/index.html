@@ -11,7 +11,7 @@
     <title>Landing Page - Start Bootstrap Theme</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -22,16 +22,11 @@
     <link href="css/landing-page.css" rel="stylesheet">
 
   </head>
-
-  <body>
-
+  
+  <body >
+  
     <!-- Navigation -->
-    <nav class="navbar navbar-light bg-light static-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
-        <!-- <a class="btn btn-primary" href="#">Sign In</a> -->
-      </div>
-    </nav>
+    
 
     <!-- Masthead -->
     <header class="masthead text-white text-center">
@@ -71,7 +66,7 @@
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
         <script src = "sakilaAPI.js"></script>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-        <button onclick ="getAll()" class="btn btn-block btn-lg btn-primary" > get all films </button>
+        <button onclick ="   getFilmByCat(), getAll()" class="btn btn-block btn-lg btn-primary" > get all films </button>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
         <input type="inputText"  class="form-control form-control-lg" placeholder ="enter film ID" id = "inputFID"/>
@@ -90,7 +85,7 @@
       </div>
     </section>
     </br>
-    <section id = "filmlist" class ="bg-primary">
+    <section id = "filmlist" class ="table-striped text-white">
     </section>
      <!-- Icons Grid 
     <section class="features-icons bg-dark text-center">
