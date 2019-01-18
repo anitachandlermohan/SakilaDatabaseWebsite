@@ -6,6 +6,8 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -36,7 +38,7 @@ public class SakilaMovieModel implements Serializable {
 	
 	private String description;
 	
-	@NotBlank
+	
 	private String category;
 	
 	private float price;
@@ -46,6 +48,8 @@ public class SakilaMovieModel implements Serializable {
 	private String rating;
 	
 	private String actors;
+	
+	
 	
 	
 	
@@ -73,13 +77,7 @@ public class SakilaMovieModel implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public void setCategory(String category) {
-		this.category = category;
-	}
 	
-	public String getCategory() {
-		return category;
-	}
 	
 	public float getPrice() {
 		return price;
@@ -111,5 +109,9 @@ public class SakilaMovieModel implements Serializable {
 	
 	public void setActors(String actors) {
 		this.actors = actors;
+	}
+	
+	public String getCategory() {
+		return category;
 	}
 }

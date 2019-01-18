@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import qa.anita.mohan.springboot.sakila.springBootSakilaDatabaseApp.exception.ResourceNotFoundException;
+import qa.anita.mohan.springboot.sakila.springBootSakilaDatabaseApp.model.MovieCat;
 import qa.anita.mohan.springboot.sakila.springBootSakilaDatabaseApp.model.SakilaMovieModel;
 import qa.anita.mohan.springboot.sakila.springBootSakilaDatabaseApp.repository.SakilaMovieRepository;
 
@@ -36,13 +37,17 @@ public class SakilaMovieController {
 	}
 	
 	
-	//return a movie//
+	//return a movie by category//
 	@GetMapping("/film_list/{FID}")
 		public SakilaMovieModel getMoviebyId(@PathVariable(value = "FID")Long filmID) {
 		return myRepo.findById(filmID).orElseThrow(()-> new ResourceNotFoundException("Film","FID", filmID));
 		
 	}
 	
+	@GetMapping("/film_list/category/{category}")
+	public List<SakilaMovieModel> getMoviebyCat(@PathVariable(value = "category")String filmcategory) {
+	return myRepo.findByCategory(filmcategory);
+	}
 	//return all movies//
 	@GetMapping("/film_list")
 	public List<SakilaMovieModel> getAllFilms(){
@@ -57,7 +62,7 @@ public class SakilaMovieController {
 		SMM.setTitle(filmDetails.getTitle());
 		SMM.setActors(filmDetails.getActors());
 		SMM.setDescription(filmDetails.getDescription());
-		SMM.setCategory(filmDetails.getCategory());
+//		SMM.setCategory(filmDetails.getCategory());
 		SMM.setLength(filmDetails.getLength());
 		SMM.setPrice(filmDetails.getPrice());
 		SMM.setRating(filmDetails.getRating());
