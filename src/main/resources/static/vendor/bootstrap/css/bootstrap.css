@@ -152,7 +152,7 @@ sup {
 }
 
 a {
-  color: #007bff;
+  color: white;;
   text-decoration: none;
   background-color: transparent;
 }
@@ -573,6 +573,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  color: white;
 }
 
 .row {
